@@ -777,7 +777,7 @@ footer {
 ════════════════════════════════════════════ */
 @media (max-width: 768px) {
   /* Cursor off on touch */
-  body { cursor: auto; }
+  body { cursor: auto; overflow-x: hidden; }
   .c-dot, .c-ring { display: none; }
   .btn-cta, .btn-outline { cursor: pointer; }
 
@@ -832,11 +832,12 @@ footer {
   .stat-l { font-size: 0.62rem; }
 
   /* Hardware bento */
-  #hardware { padding: 56px 0; }
-  .bento { grid-template-columns: 1fr; gap: 10px; }
-  .s8,.s7,.s6,.s5,.s4,.s3 { grid-column: span 1; }
-  .bc { padding: 24px 20px; border-radius: 16px; }
-  .bc.featured { flex-direction: column; gap: 16px; }
+  #hardware { padding: 56px 0; overflow-x: hidden; }
+  .bento { grid-template-columns: 1fr !important; gap: 10px; overflow: hidden; }
+  .s8,.s7,.s6,.s5,.s4,.s3,
+  .bc.featured { grid-column: 1 / -1 !important; }
+  .bc { padding: 24px 20px; border-radius: 16px; width: 100%; min-width: 0; max-width: 100%; box-sizing: border-box; }
+  .bc.featured { flex-direction: column !important; gap: 16px; }
   .feat-vis { display: flex; justify-content: center; }
   .sec-head { margin-bottom: 32px; }
 
@@ -1795,4 +1796,4 @@ if (window.innerWidth > 768) {
 }
 </script>
 </body>
-</html>
+         </html>
